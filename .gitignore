@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reference/source material (design mockups, raw photos & videos) - not app source
+/projects/
+
+# local Claude Code tooling state
+/.agents/
+/.claude/
+skills-lock.json
