@@ -44,7 +44,7 @@ export default function SafetyPage() {
 
       <Section background="surface">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-          <div>
+          <div className="text-center lg:text-left">
             <span className="text-label-sm font-semibold uppercase tracking-wider text-secondary">
               Mühendislik Yaklaşımı
             </span>
@@ -67,7 +67,7 @@ export default function SafetyPage() {
       </Section>
 
       <Section background="surface-dim">
-        <div className="mb-8">
+        <div className="mb-8 text-center">
           <span className="text-label-sm font-semibold uppercase tracking-wider text-alert-text">
             Önemli Acil Durum Protokolü
           </span>

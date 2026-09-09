@@ -20,7 +20,7 @@ export default function HomePage() {
     <>
       <section className="relative w-full overflow-hidden bg-surface-dim py-12 lg:py-16">
         <div className="mx-auto grid w-full max-w-[75rem] grid-cols-1 items-center gap-10 px-4 lg:grid-cols-12 lg:gap-12 lg:px-6">
-          <div className="flex flex-col items-start gap-5 lg:col-span-7">
+          <div className="flex flex-col items-center gap-5 text-center lg:col-span-7 lg:items-start lg:text-left">
             <Badge tone="secondary">{site.region} Doğalgaz Hizmetleri</Badge>
             <h1 className="text-display-hero-mobile font-heading text-tertiary lg:text-display-hero">
               Doğalgazda{" "}
@@ -39,13 +39,13 @@ export default function HomePage() {
                 Bize Ulaşın
               </Button>
             </div>
-            <div className="mt-2 grid w-full max-w-xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="mt-2 grid w-full max-w-xl grid-cols-1 justify-items-center gap-3 sm:grid-cols-3 lg:justify-items-start">
               {[
                 { icon: "verified_user", label: "Deneyimli Saha Ekibi" },
                 { icon: "workspace_premium", label: "Kaliteli Marka ve Malzeme" },
                 { icon: "support_agent", label: "Yerinde Keşif ve Teklif" },
               ].map((chip) => (
-                <div key={chip.label} className="flex items-center gap-2">
+                <div key={chip.label} className="inline-flex items-center gap-2">
                   <MaterialIcon name={chip.icon} className="text-xl text-primary" />
                   <span className="text-body-sm text-tertiary">{chip.label}</span>
                 </div>
@@ -99,7 +99,7 @@ export default function HomePage() {
       </Section>
 
       <Section background="surface-dim">
-        <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div className="mb-8 flex flex-col items-center justify-between gap-4 text-center sm:flex-row sm:items-end sm:text-left">
           <div>
             <span className="text-label-sm font-semibold uppercase tracking-wider text-secondary">
               Uzmanlık Alanlarımız
@@ -129,14 +129,12 @@ export default function HomePage() {
 
       <Section background="surface">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
-          <div className="flex flex-col gap-4">
-            <div className="inline-flex">
-              <Badge tone="secondary">Hayati Uyarı ve Güvenlik Kılavuzu</Badge>
-            </div>
+          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
+            <Badge tone="secondary">Hayati Uyarı ve Güvenlik Kılavuzu</Badge>
             <h2 className="text-headline-lg font-heading text-tertiary lg:text-headline-xl">
               Güvenliğiniz Bizim İçin İlk Sırada
             </h2>
-            <p className="text-body-md text-neutral">
+            <p className="text-left text-body-md text-neutral">
               Doğalgaz konforlu ve ekonomik bir enerjidir; ancak doğru
               tesisat ve bilinçli kullanımla güvenlidir. Havalandırma
               menfezlerinin kapatılmaması ve şüpheli kokularda vakit

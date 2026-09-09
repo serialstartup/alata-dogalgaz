@@ -28,26 +28,26 @@ export default function AboutPage() {
 
       <Section background="surface">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-2 lg:items-center">
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col items-center gap-4 text-center lg:items-start lg:text-left">
             <span className="text-label-sm font-semibold uppercase tracking-wider text-secondary">
               Hikayemiz
             </span>
             <h2 className="text-headline-lg font-heading text-tertiary lg:text-headline-xl">
               Alata Mahallesi&apos;nden Mersin Geneline
             </h2>
-            <p className="text-body-md text-neutral">
+            <p className="text-left text-body-md text-neutral">
               Alata Doğalgaz ismini, Erdemli&apos;deki hizmet üssümüz olan
               Alata Mahallesi&apos;nden alıyor. Bölgemizde doğalgaz tesisatı,
               kombi, radyatör ve ısı pompası satış, montaj ve bakım
               hizmetleri sunuyor; Vaillant, Viessmann, Bosch, Demirdöküm gibi
               güvenilir markalarla çalışıyoruz.
             </p>
-            <p className="text-body-md text-neutral">
+            <p className="text-left text-body-md text-neutral">
               Küçük bir mahalle işletmesi olarak başladığımız bu yolda,
               müşterilerimizle kurduğumuz doğrudan ve şeffaf iletişimi en
               değerli önceliğimiz olarak görüyoruz.
             </p>
-            <div className="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+            <div className="mt-2 grid w-full grid-cols-1 gap-3 sm:grid-cols-2">
               {[
                 { icon: "location_on", label: site.region },
                 { icon: "handshake", label: "Şeffaf ve Doğrudan İletişim" },
