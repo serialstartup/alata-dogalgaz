@@ -130,7 +130,9 @@ export default function HomePage() {
       <Section background="surface">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
           <div className="flex flex-col gap-4">
-            <Badge tone="secondary">Hayati Uyarı ve Güvenlik Kılavuzu</Badge>
+            <div className="inline-flex">
+              <Badge tone="secondary">Hayati Uyarı ve Güvenlik Kılavuzu</Badge>
+            </div>
             <h2 className="text-headline-lg font-heading text-tertiary lg:text-headline-xl">
               Güvenliğiniz Bizim İçin İlk Sırada
             </h2>
@@ -140,13 +142,6 @@ export default function HomePage() {
               menfezlerinin kapatılmaması ve şüpheli kokularda vakit
               kaybetmeden 187 Doğalgaz Acil hattının aranması önemlidir.
             </p>
-            <div className="flex items-start gap-3 rounded-lg bg-alert-bg p-4">
-              <MaterialIcon name="warning" className="mt-0.5 text-xl text-alert-text" />
-              <p className="text-body-sm text-alert-text">
-                Kombi veya şofbenlerin bulunduğu mekanlardaki havalandırma
-                menfezlerini asla kapatmayın.
-              </p>
-            </div>
             <Link
               href="/guvenli-dogalgaz"
               className="inline-flex w-fit items-center gap-1 text-label-lg font-semibold text-primary"

@@ -35,10 +35,6 @@ export default function Header() {
               {site.phoneDisplay}
             </a>
             <span className="text-white/40">|</span>
-            <a href={`mailto:${site.email}`} className="hover:underline">
-              {site.email}
-            </a>
-            <span className="text-white/40">|</span>
             <span>Çalışma Saatleri: {site.workingHours}</span>
           </div>
           <a
@@ -54,14 +50,14 @@ export default function Header() {
       </div>
 
       <div className="bg-surface">
-        <div className="mx-auto flex w-full items-center justify-between gap-4 px-4 py-2 lg:px-6">
+        <div className="mx-auto flex h-16 w-full items-center justify-between px-4 lg:px-6">
           <Link href="/" className="flex shrink-0 items-center">
             <Image
               src="/alata-logo-removebg.png"
               alt="Alata Doğalgaz Logo"
               width={240}
               height={160}
-              className="h-12 w-auto object-contain lg:h-16"
+              className="h-16 w-auto object-contain lg:-my-8 lg:h-32"
               priority
             />
           </Link>
