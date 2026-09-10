@@ -470,3 +470,80 @@
 - 404 davranışı test edilmelidir.
 - Görsellerin yüklenmesi kontrol edilmelidir.
 - Console error kontrol edilmelidir.
+
+## 46 — PROJE DURUMU (GÜNCEL)
+
+- v1 canlıda: Next.js 16 (App Router) + React 19 + Tailwind CSS v4.
+- 5 sayfa yayında: Ana Sayfa (`/`), Hakkımızda (`/hakkimizda`), Hizmetlerimiz
+  (`/hizmetlerimiz`), Güvenli Doğalgaz (`/guvenli-dogalgaz`), İletişim (`/iletisim`).
+- Duyurular sayfası v1 kapsamında yok — backend gerektirdiği için bilinçli
+  olarak eklenmedi, header/footer'da da stub olarak yer almıyor.
+- İletişim sayfasında form YOK. Bunun yerine "Hemen Ara" (`tel:`),
+  "WhatsApp'tan Yaz" (`wa.me`) ve e-posta butonları var
+  (`components/ContactActions.tsx`). Bu bilinçli bir tercih — proje
+  backend'siz statik bir site olarak tasarlandı, form eklenmeyecek.
+- İkon sistemi: Google Material Symbols Outlined, `app/layout.tsx` içinde
+  `<link>` ile yükleniyor (variable-axis icon fontu olduğu için next/font
+  yerine doğrudan link tercih edildi).
+- Fontlar: Plus Jakarta Sans (başlıklar, `font-heading`) + Inter (gövde,
+  `font-body`), `next/font/google` ile self-host ediliyor.
+- Tasarım token'ları (renk, tipografi ölçeği, radius, gölge) `app/globals.css`
+  içinde Tailwind v4 `@theme` bloğunda tanımlı. Yeni bir renk/boyut
+  gerekiyorsa önce buraya bak, ad-hoc arbitrary value yazmadan önce.
+
+## 47 — GERÇEK İÇERİK KAYNAĞI (TEK DOĞRULUK KAYNAĞI)
+
+- Tüm marka/iletişim bilgisi `data/site.ts` içinde — adres, telefon, e-posta,
+  çalışma saatleri, acil hat, bölge ve dağıtım şirketi bilgisi. Yeni sayfa/
+  component yazarken bu bilgileri BURADAN import et, hardcode etme veya
+  tahmin etme.
+- Hizmetler, markalar, süreç adımları: `data/services.ts`.
+- Güvenlik içerikleri (kullanım ipuçları, bakım nedenleri, acil durum
+  adımları): `data/safety.ts`.
+- Kurumsal değerler/misyon/vizyon: `data/values.ts`.
+- Gerçek marka adı yalnızca **"Alata Doğalgaz"** — "Mühendislik & Enerji
+  A.Ş." gibi bir ek YOK. İlk tasarım referansından (Stitch mockup) kalma
+  uydurma bir ekti, kaldırıldı; geri eklenmemeli.
+- **Aksa Doğalgaz** bölgenin dağıtım şirketi olarak anılabilir ama "yetkili
+  bayi/servis" iddiası KURULMAMALI — işletme sahibi bunu açıkça reddetti.
+- Kuruluş yılı, çalışan sayısı, proje sayısı gibi rakamlar hiçbir zaman
+  verilmedi — bunlar UYDURULMAMALI, niteliksel dil kullanılmaya devam
+  edilmeli (örn. "deneyimli saha ekibi", "kaliteli marka ve malzeme").
+- **187 Doğalgaz Acil** hattı gerçek ve ulusaldır (BOTAŞ) — bu istisna,
+  korunmalı ve doğrulanmamış diğer iddialarla karıştırılmamalı.
+
+## 48 — GÖRSEL/VİDEO VARLIKLARI
+
+- `public/isler/` — gerçek saha fotoğrafları (anlamlı dosya adlarıyla),
+  `public/videos/` — gerçek saha videoları. Bunlar `projects/what-we-do/`
+  klasöründen seçilip kopyalandı.
+- `projects/` klasörü (Stitch tasarım referansları + tüm ham foto/video
+  kaynakları) yalnızca yerel makinede duruyor, `.gitignore`'da — repo
+  boyutunu küçük tutmak için bilinçli olarak commit'lenmiyor.
+- Yeni bir görsel gerekiyorsa önce `projects/what-we-do/` içindeki
+  kullanılmamış gerçek fotoğraflara bak; gerçek fotoğraf yoksa kullanıcıya
+  sor. Stok görsel veya AI ile üretilmiş görsel varsayılan olarak
+  kullanılmamalı (bkz. bölüm 18).
+- Marka logosu: `public/alata-logo-removebg.png` (şeffaf, tercih edilen) ve
+  `public/alata-logo.jpeg` (beyaz zeminli, yalnızca gerekirse).
+
+## 49 — BİLİNEN TASARIM KARARLARI
+
+- Header logosu bilinçli olarak büyük tutuluyor: masaüstünde
+  (`components/Header.tsx`) logo `lg:-my-8 lg:h-32` ile header satırının
+  sabit yüksekliğini (`h-16`) aşıp taşıyor ("logo bleed" efekti). Bu bir
+  hata değil, kullanıcı tercihi. Logo boyutunu değiştirirken negatif margin
+  dengesini yeniden hesapla ki header satırı büyümesin.
+- Mobilde bölüm başlıkları/rozetler genelde ortalanıyor ama çok satırlı
+  gövde paragrafları OKUNABİLİRLİK için bilinçli olarak sola yaslı
+  bırakılıyor. Yeni bölüm eklerken bu deseni koru: kısa öğeleri (rozet,
+  başlık, tek satırlık CTA) ortala, uzun paragrafları sola yasla.
+- Ana sayfada "Çalıştığımız Markalar" gibi bir logo/rozet duvarı YOK —
+  kullanıcı bunu "yapay zeka şablonu" hissi verdiği için kaldırttı, yerine
+  gerçek saha videoları (`public/videos/`) kondu. Marka isimleri hizmet
+  açıklamalarında geçiyor. Benzer jenerik "trust badge" bölümleri eklemeden
+  önce bunu göz önünde bulundur.
+- `components/ServiceCardDetailed.tsx` hem Ana Sayfa önizlemesinde (`href`
+  ile, tıklanabilir) hem Hizmetlerimiz sayfasında (`href`'siz, sabit)
+  kullanılıyor — tek component, iki mod. Yeni bir kart varyantı gerekmeden
+  önce bu component'in genişletilip genişletilemeyeceğine bak.
