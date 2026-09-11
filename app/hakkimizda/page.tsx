@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Hakkımızda",
   description:
     "Alata Doğalgaz, Erdemli'deki Alata Mahallesi'nden yola çıkarak Mersin genelinde doğalgaz, kombi ve ısıtma çözümleri sunar.",
+  alternates: {
+    canonical: "/hakkimizda",
+  },
 };
 
 export default function AboutPage() {

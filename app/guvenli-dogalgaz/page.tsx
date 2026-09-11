@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "Güvenli Doğalgaz",
   description:
     "Doğalgaz kullanımında dikkat edilmesi gerekenler, periyodik bakımın önemi ve gaz kokusu durumunda izlenmesi gereken adımlar.",
+  alternates: {
+    canonical: "/guvenli-dogalgaz",
+  },
 };
 
 export default function SafetyPage() {

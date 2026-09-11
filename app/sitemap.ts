@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const baseUrl = "https://www.alatadogalgaz.com.tr";
+const baseUrl = "https://www.alatadogalgaz.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = ["", "/hakkimizda", "/hizmetlerimiz", "/guvenli-dogalgaz", "/iletisim"];

@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Hizmetlerimiz",
   description:
     "Doğalgaz tesisatı, kombi/radyatör/ısı pompası satış ve montajı, periyodik bakım ve revizyon hizmetleri — Erdemli ve Mersin geneli.",
+  alternates: {
+    canonical: "/hizmetlerimiz",
+  },
 };
 
 export default function ServicesPage() {

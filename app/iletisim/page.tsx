@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "İletişim",
   description:
     "Alata Doğalgaz iletişim bilgileri: telefon, WhatsApp, e-posta, adres ve çalışma saatleri.",
+  alternates: {
+    canonical: "/iletisim",
+  },
 };
 
 export default function ContactPage() {

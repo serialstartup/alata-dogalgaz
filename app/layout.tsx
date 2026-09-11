@@ -18,12 +18,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.alatadogalgaz.com.tr"),
+  metadataBase: new URL("https://www.alatadogalgaz.com"),
   title: {
     template: "%s | " + site.name,
     default: site.name + " | " + site.tagline,
   },
   description: site.description,
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: site.name,
     description: site.description,
@@ -40,7 +43,7 @@ const localBusinessJsonLd = {
   description: site.description,
   telephone: site.phoneTel,
   email: site.email,
-  url: "https://www.alatadogalgaz.com.tr",
+  url: "https://www.alatadogalgaz.com",
   address: {
     "@type": "PostalAddress",
     streetAddress: site.address.line1,
