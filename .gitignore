@@ -47,3 +47,6 @@ next-env.d.ts
 /.agents/
 /.claude/
 skills-lock.json
+
+# local-only working notes (not for GitHub)
+/SEO-NOTLARI.md
